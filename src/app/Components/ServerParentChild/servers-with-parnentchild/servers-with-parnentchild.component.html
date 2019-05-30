@@ -1,0 +1,46 @@
+<div class="container">
+  <button (click)="toggle()" id="btToggle" class="btn btn-info btn-lg">{{button_name}}</button>
+  <div class="row" *ngIf="show_dialog">
+    <div class="col-sm-6">
+      <ol><h3>Steps:</h3></ol>
+      <ol>1.Create new Parent Component called SeversWithParentchild</ol>
+      <ol>2.Create Two new child Component called ServerHeader and SeverDetails</ol>
+      <ol>3.Add Child Component ServerHeader and SeverDetails with <b>ngfor</b> in  parent Component SeversWithParentchild.</ol>
+      <ol>4.Add <b>Custom Property</b> serverElements in Parent Compenent SeversWithParentchild.Ex. <span> serverElements = [];</span>
+      </ol>
+      <ol>5.Add <b>Custom Property</b> element in child Component SeverDetails.</ol>
+      <ol>6.Add <b>Input decorator</b> for Property element in child Component SeverDetails and define alias Name for this decorator.
+      </ol>
+      <ol>7.Use this <b>Input decorator</b> in Parent Component to assign value to property. ex:
+        <span>[ServElement]="SERVERelement"</span></ol>
+    </div>
+    <div class="col-sm-6">
+     
+      <ol>8.Add <b>Custom Event</b> for Server and BulePrint in Parent Compenent Ex. <span>(ServerCreated)="onServerAdded($event)"
+          (BluePrintCreated) ="onAddBlueprint($event)"</span></ol>
+      <ol>9.Add method for Server and BulePrint in Parent Component Ts file. Ex. <span>onServerAdded, onAddBlueprint</span></ol>
+      <ol>10.Add Custom Property in another child component ServerHeader. Ex. <span>ServerCreated, BluePrintCreated</span></ol>
+      <ol>11.Initialize Custom Property with <b>EventEmitter</b> child component ServerHeader. Ex. <span>ServerCreated=new
+          EventEmitter</span></ol>
+      <ol>12.Add <b>Output decorator</b> in child component ServerHeader. Ex. <span>ServerCreated, BluePrintCreated</span>
+      </ol>
+      <ol>13.Emit both Custom property in method of child component ServerHeader Ts file. Ex. <span>onAddServer, onAddBlueprint</span></ol>
+    </div>
+    <div class="col-sm-12">
+      <ol><h4>Custom Property:</h4>We can define our own property and decorate this with an decorator i.e input or output and use this property outside the component in another component.</ol>
+      <ol><h4>Input decorator:</h4>If you want to pass data from the parent component to the child component, then you need to use two things: @Input and property binding.</ol>
+      <ol><h4>Output decorator:</h4>If you want to pass data from the child component to the Parent component, then you need to use two things: @Output and new EventEmitter.</ol>
+      <ol><h4>EventEmitter:</h4>EventEmitter is a class in angular framework. It has emit() method that emits custom events. We can use EventEmitter in custom event binding</ol>
+    </div>
+  </div>
+  <div class="row" *ngIf="!show_dialog">
+    <app-servers-header (ServerCreated)="onServerAdded($event)" (BluePrintCreated)="onAddBlueprint($event)">
+    </app-servers-header>
+  </div>
+
+  <hr>
+  <div class="row" *ngIf="!show_dialog">
+    <app-servers-details *ngFor="let SERVERelement of serverElements" [ServElement]="SERVERelement">
+    </app-servers-details>
+  </div>
+</div>

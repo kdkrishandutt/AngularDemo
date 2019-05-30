@@ -1,0 +1,91 @@
+<h1>Contact us</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+  <!-- <div *ngIf="success">
+    <h5 class="alert alert-success">{{msg}}</h5>
+  </div> -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      First Name:
+      <input type="text" formControlName="Fname" [(ngModel)]="Fname" class="form-control">
+      <div *ngIf="submitted && messageForm.controls.Fname.errors" class="alert alert-danger">
+        <div *ngIf="messageForm.controls.Fname.errors.required">Your First Name is required</div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      Last Name:
+      <input type="text" formControlName="Lname" [(ngModel)]="Lname" class="form-control">
+      <div *ngIf="submitted && messageForm.controls.Lname.errors" class="alert alert-danger">
+        <div *ngIf="messageForm.controls.Lname.errors.required">Your Last Name is required</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      Message:
+      <textarea formControlName="message" class="form-control" [(ngModel)]="message"></textarea>
+      <div *ngIf="submitted && messageForm.controls.message.errors" class="alert alert-danger">
+        <div *ngIf="messageForm.controls.message.errors.required">A message is required</div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      Email:
+      <input type="text" formControlName="Email" class="form-control" [(ngModel)]="Email">
+      <div *ngIf="submitted && messageForm.controls.Email.errors" class="alert alert-danger">
+        <div *ngIf="messageForm.controls.Email.errors.required">A Email is required</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      Country:
+      <!-- <input type="text" formControlName="country" class="form-control" [(ngModel)]="country"> -->
+      <select formControlName="country" class="form-control" [(ngModel)]="country" (ngModelChange)="onChangeCountry(country);">
+        <option selected="" value="Select Country">Select Country</option>
+        <option [ngValue]="k.Name" *ngFor="let k of CountryList">
+          {{k.Name}}
+        </option>
+      </select>
+      <div *ngIf="submitted && messageForm.controls.country.errors" class="alert alert-danger">
+        <div *ngIf="messageForm.controls.country.errors.required">A country is required</div>
+      </div>
+    </div>
+    <div class="col-lg-12"><br>
+      <input type="submit" value="Save" class="btn btn-primary">
+    </div>
+  </div>
+</form>
+<BR>
+<div *ngIf="this.myItems.length>0" class="row">
+  <div class="col-lg-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Message</th>
+          <th>Email</th>
+          <th>Country</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of myItems; let i = index">
+          <td>{{ data.Fname }}</td>
+          <td>{{ data.Lname }}</td>
+          <td>{{ data.message }}</td>
+          <td>{{ data.Email }}</td>
+          <td>{{ data.country }}</td>
+          <td>
+            <div class="row">
+              <div class="col-sm-3"> <span class="fa fa-pencil" (click)="fnEdit(i)"></span></div>
+              <div class="col-sm-3"><span class="fa fa-trash" (click)=fnDetete(data)></span></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

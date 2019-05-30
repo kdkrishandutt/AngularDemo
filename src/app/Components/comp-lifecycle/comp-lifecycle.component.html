@@ -1,0 +1,52 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Angular Component Life Cycle Example</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-12">
+        <span class="note"><b>Note:</b>Since each of these lifecycle hook methods has an associated typescript interface, the name of those interfaces is the same name just without the ng prefix like ngOnInit has an interface called OnInit. Each interface defines just one life cycle hook method. One more important note that the browser-based TypeScript compiler does not raise a compilation error when we don’t implement interface functions in our class. But, in the compiling time of the typescript code, it will throw an error.</span>
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-2"><button class="btn btn-primary">ngOnChanges()</button> </div>
+      <div class="col-lg-10 dis">This event executes every time when a value of an input control within the component has been changed. Actually, this event fires first when a value of a bound property has been changed. It always receives a changed data map, containing the current and previous value of the bound property wrapped in a SimpleChange.</div>
+     
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-2"><button class="btn btn-primary">ngOnInit()</button> </div>
+      <div class="col-lg-10 dis">This event initializes after angular first displays the data-bound properties or when the component has been initialized. This event basically is called only once just after the ngOnChanges() events. This event is mainly used for initializing data in a component.</div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-2"><button class="btn btn-primary">ngDoCheck()</button> </div>
+      <div class="col-lg-10 dis">This event is triggered every time when the input properties of a component are checked. We can use this hook method to implement the check with our own logic check. Basically, this method allows us to implement our own custom change detection logic or algorithm for any component.</div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-2"><button class="btn btn-primary">ngAfterContentInit()</button> </div>
+      <div class="col-lg-10 dis">This lifecycle method is executed when Angular performs any content projection within the component views. This method executes only for the first time when all the bindings of the component need to be checked for the first time. This event executes just after the ngDoCheck() method. This method is basically linked with the child component initializations.</div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-2"><button class="btn btn-primary">ngAfterContentChecked()</button> </div>
+      <div class="col-lg-10 dis">This lifecycle hook method executes every time when the content of the component has been checked by the change detection mechanism of the Angular. This method called after ngAfterContentInit() method. This method is also called on every subsequent execution of ngDoCheck(). This method is also mainly linked with the child component initializations.</div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-2"><button class="btn btn-primary">ngAfterViewInit()</button> </div>
+      <div class="col-lg-10 dis">This lifecycle hook method executes when the component’s view has been fully initialized. This method is initialized after Angular initializes the component’s view and child views. It is called only the first time after ngAfterContentChecked().</div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-2"><button class="btn btn-primary">ngAfterViewChecked()</button> </div>
+      <div class="col-lg-10 dis">This method is just called after the ngAterViewInit() method. It is executed every time the when the view of the given component has been checked by the change detection algorithm of Angular.</div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-2"><button class="btn btn-primary">ngOnDestroy()</button> </div>
+      <div class="col-lg-10 dis">This method will be executed just before Angular destroys the components. This method is very useful for unsubscribing the observables and detaching the event handlers to avoid memory leaks.</div>
+    </div>
+    
+  </div>
+</div>

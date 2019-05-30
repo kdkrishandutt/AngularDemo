@@ -1,0 +1,27 @@
+<h3 class="first">Basic AutoComplete</h3>
+<p-autoComplete class="clsText" [(ngModel)]="country" [suggestions]="filteredCountriesSingle"
+  (completeMethod)="filterCountrySingle($event)" field="callId" [size]="30" placeholder="Enter your Search "
+  [minLength]="1" (onSelect)="add($event)"></p-autoComplete>
+<!-- <span style="margin-left:10px">Country: {{country ? country.callId||country : 'none'}}</span> -->
+<table class="row table table-responsive" *ngIf="dispay">
+  <thead>
+    <th>Call Id</th>
+    <th>Mobile No.</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Date</th>
+    <th>Techinican Id</th>
+  </thead>
+  <tbody>
+    <td>{{country ? country.callId||country : '-'}}</td>
+    <td>{{country ? country.mobileNo||country : '-'}}</td>
+    <td>{{country ? country.customerName||country : '-'}}</td>
+    <td>{{country ? country.address||country : '-'}}</td>
+    <td>{{country ? country.callCompeletionDate||country : '-'}}</td>
+    <td>{{country ? country.technicianId||country : '-'}}</td>
+  </tbody>
+
+</table>
+
+<h3>Basic Calendar</h3>
+<p-calendar [(ngModel)]="date1"></p-calendar>

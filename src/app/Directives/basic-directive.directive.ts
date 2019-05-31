@@ -7,7 +7,7 @@ export class BasicDirectiveDirective implements OnInit {
 
   constructor(private refElemenst: ElementRef,private renderer: Renderer) { }
   ngOnInit(){
-    
+    //
   }
 
   @HostListener('mouseenter') onMouseEnter() {

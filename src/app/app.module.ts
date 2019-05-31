@@ -35,6 +35,11 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { CompLifecycleComponent } from './Components/comp-lifecycle/comp-lifecycle.component';
 import { DirectiveExampleComponent } from './Components/directive-example/directive-example.component';
 import { BasicDirectiveDirective } from './Directives/basic-directive.directive';
+import {OrderListModule} from 'primeng/orderlist';
+import { AccordionModule } from 'primeng/components/accordion/accordion';
+import{ CheckboxModule} from 'primeng/components/checkbox/checkbox' ;
+import{ RadioButtonModule} from 'primeng/components/radiobutton/radiobutton' ;
+import { from } from 'rxjs';
 const appRoutes: Routes = [
   { path: '', component: EventPropertybindingComponent },
   { path: 'app-home', component: HomeComponent },
@@ -73,8 +78,9 @@ const appRoutes: Routes = [
     AppRoutingModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule,
     NgxPaginationModule, Ng2SearchPipeModule, FormsModule, MatSortModule,
     BrowserAnimationsModule, MatPaginatorModule,
-    ToastrModule.forRoot(), AutoCompleteModule, HttpClientModule, AngularMultiSelectModule, CalendarModule
-  ],
+    ToastrModule.forRoot(), AutoCompleteModule, HttpClientModule, AngularMultiSelectModule, 
+    CalendarModule,OrderListModule,AccordionModule,CheckboxModule,RadioButtonModule
+    ],
   providers: [ButtoneventService, SortingSearchingServiceService, ImageServiceService,
     FilterimagesPipe, CountryService, HttpClient],
   bootstrap: [AppComponent]

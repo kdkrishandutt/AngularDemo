@@ -1,27 +1,252 @@
-<h3 class="first">Basic AutoComplete</h3>
-<p-autoComplete class="clsText" [(ngModel)]="country" [suggestions]="filteredCountriesSingle"
-  (completeMethod)="filterCountrySingle($event)" field="callId" [size]="30" placeholder="Enter your Search "
-  [minLength]="1" (onSelect)="add($event)"></p-autoComplete>
-<!-- <span style="margin-left:10px">Country: {{country ? country.callId||country : 'none'}}</span> -->
-<table class="row table table-responsive" *ngIf="dispay">
-  <thead>
-    <th>Call Id</th>
-    <th>Mobile No.</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Date</th>
-    <th>Techinican Id</th>
-  </thead>
-  <tbody>
-    <td>{{country ? country.callId||country : '-'}}</td>
-    <td>{{country ? country.mobileNo||country : '-'}}</td>
-    <td>{{country ? country.customerName||country : '-'}}</td>
-    <td>{{country ? country.address||country : '-'}}</td>
-    <td>{{country ? country.callCompeletionDate||country : '-'}}</td>
-    <td>{{country ? country.technicianId||country : '-'}}</td>
-  </tbody>
+<div class="row">
+  <div class="col-sm-12"><button class="btn btn-primary" (click)="showInputGroup()">InputGroup</button></div>
+  <div class="col-sm-12" *ngIf="InputGroup">
+    <h3 class="first">Addons</h3>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+          <input type="text" pInputText placeholder="Username">
+        </div>
+      </div>
 
-</table>
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon">$</span>
+          <input type="text" pInputText placeholder="Price">
+          <span class="ui-inputgroup-addon">.00</span>
+        </div>
+      </div>
 
-<h3>Basic Calendar</h3>
-<p-calendar [(ngModel)]="date1"></p-calendar>
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon">www</span>
+          <input type="text" pInputText placeholder="Website">
+        </div>
+      </div>
+    </div>
+
+    <h3>Multiple Addons</h3>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="fa fa-credit-card"></i></span>
+          <span class="ui-inputgroup-addon"><i class="fa fa-cc-visa"></i></span>
+          <input type="text" pInputText placeholder="Price">
+          <span class="ui-inputgroup-addon">$</span>
+          <span class="ui-inputgroup-addon">.00</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Button Addons</h3>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <button pButton type="button" label="Search"></button>
+          <input type="text" pInputText placeholder="Keyword">
+        </div>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <input type="text" pInputText placeholder="Keyword">
+          <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn"></button>
+        </div>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <button pButton type="button" icon="pi pi-check" class="ui-button-success"></button>
+          <input type="text" pInputText placeholder="Vote">
+          <button pButton type="button" icon="pi pi-close" class="ui-button-danger"></button>
+        </div>
+      </div>
+    </div>
+
+    <h3>Checkbox and RadioButton</h3>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon">
+            <p-checkbox></p-checkbox>
+          </span>
+          <input type="text" pInputText placeholder="Username">
+        </div>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <input type="text" pInputText placeholder="Price">
+          <span class="ui-inputgroup-addon">
+            <p-radioButton></p-radioButton>
+          </span>
+        </div>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon">
+            <p-checkbox></p-checkbox>
+          </span>
+          <input type="text" pInputText placeholder="Website">
+          <span class="ui-inputgroup-addon">
+            <p-radioButton></p-radioButton>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="temp">
+  <h3 class="first">Basic AutoComplete</h3>
+  <p-autoComplete class="clsText" [(ngModel)]="country" [suggestions]="filteredCountriesSingle"
+    (completeMethod)="filterCountrySingle($event)" field="callId" [size]="30" placeholder="Enter your Search "
+    [minLength]="1" (onSelect)="add($event)"></p-autoComplete>
+  <!-- <span style="margin-left:10px">Country: {{country ? country.callId||country : 'none'}}</span> -->
+  <table class="row table table-responsive" *ngIf="dispay">
+    <thead>
+      <th>Call Id</th>
+      <th>Mobile No.</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Date</th>
+      <th>Techinican Id</th>
+    </thead>
+    <tbody>
+      <td>{{country ? country.callId||country : '-'}}</td>
+      <td>{{country ? country.mobileNo||country : '-'}}</td>
+      <td>{{country ? country.customerName||country : '-'}}</td>
+      <td>{{country ? country.address||country : '-'}}</td>
+      <td>{{country ? country.callCompeletionDate||country : '-'}}</td>
+      <td>{{country ? country.technicianId||country : '-'}}</td>
+    </tbody>
+
+  </table>
+
+  <h3>Basic Calendar</h3>
+  <p-calendar [(ngModel)]="date1"></p-calendar>
+
+  <p-accordion>
+    <p-accordionTab header="India">
+      <p-orderList [value]="Indiastate">
+        <ng-template let-state pTemplate="item">
+          <div class="ui-helper-clearfix">
+            <div style="font-size:16px;float:left;margin:5px">{{state}}</div>
+          </div>
+        </ng-template>
+      </p-orderList>
+    </p-accordionTab>
+    <p-accordionTab header="Australia">
+      <p-orderList [value]="Ausstate">
+        <ng-template let-Ausstate pTemplate="item">
+          <div class="ui-helper-clearfix">
+            <div style="font-size:16px;float:left;margin:5px">{{Ausstate}}</div>
+          </div>
+        </ng-template>
+      </p-orderList>
+    </p-accordionTab>
+    <p-accordionTab header="SriLanka">
+      <p-orderList [value]="Slstate">
+        <ng-template let-Slstate pTemplate="item">
+          <div class="ui-helper-clearfix">
+            <div style="font-size:16px;float:center;margin:5px">{{Slstate}}</div>
+          </div>
+        </ng-template>
+      </p-orderList>
+
+    </p-accordionTab>
+  </p-accordion>
+</div>
+<div class="row">
+    <div class="col-lg-12"><button class="btn btn-primary" (click)="showCalendar()">Calendar</button></div>
+  <div class="col-lg-12" *ngIf="Calendar">
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-12 ui-md-4">
+        <h3>Basic</h3>
+        <p-calendar [(ngModel)]="date1"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Spanish</h3>
+        <p-calendar [(ngModel)]="date2" [locale]="es" dateFormat="dd/mm/yy"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Icon</h3>
+        <p-calendar [(ngModel)]="date3" [showIcon]="true"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Min-Max</h3>
+        <p-calendar [(ngModel)]="date4" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Disable Days</h3>
+        <p-calendar [(ngModel)]="date5" [disabledDates]="invalidDates" [disabledDays]="[0,6]" [readonlyInput]="true">
+        </p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Navigators</h3>
+        <p-calendar [(ngModel)]="date6" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030">
+        </p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Time</h3>
+        <p-calendar [(ngModel)]="date7" [showTime]="true"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Time Only </h3>
+        <p-calendar [(ngModel)]="date8" [timeOnly]="true"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Multiple </h3>
+        <p-calendar [(ngModel)]="dates" selectionMode="multiple" [readonlyInput]="true"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Range</h3>
+        <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Button Bar</h3>
+        <p-calendar [(ngModel)]="date9" showButtonBar="true"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Date Template</h3>
+        <p-calendar [(ngModel)]="date11">
+          <ng-template pTemplate="date" let-date>
+            <span [ngStyle]="{backgroundColor: (date.day < 21 && date.day > 10) ? '#81C784' : 'inherit'}"
+              style="border-radius:50%;padding: .25em;width: 1.75em; height:1.75em; display:block;">{{date.day}}</span>
+          </ng-template>
+        </p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Multiple Months</h3>
+        <p-calendar [(ngModel)]="date11" [numberOfMonths]="3"></p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Month Picker</h3>
+        <p-calendar [(ngModel)]="date12" view="month" dateFormat="mm/yy" [yearNavigator]="true" yearRange="2000:2030">
+        </p-calendar>
+      </div>
+
+      <div class="ui-g-12 ui-md-4">
+        <h3>Touch UI</h3>
+        <p-calendar [(ngModel)]="date13" [touchUI]="true"></p-calendar>
+      </div>
+    </div>
+
+    <h3>Inline</h3>
+    <p-calendar [(ngModel)]="date14" [inline]="true" [showWeek]="true"></p-calendar>
+  </div>
+</div>

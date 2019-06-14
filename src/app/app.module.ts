@@ -23,6 +23,7 @@ import { ImagegalleryComponent } from './Components/ImageGalleryApp/imagegallery
 import { ImageDetailsComponent } from './Components/ImageGalleryApp/image-details/image-details.component';
 import { ImageServiceService } from './Services/image-service.service';
 import { FilterimagesPipe } from './Pipes/filterimages.pipe';
+import { HyphenSlashPipe } from './Pipes/hypenToSlash.pipe';
 import { EncryptionDescryptionSampleComponent } from './Components/encryption-descryption-sample/encryption-descryption-sample.component';
 import { ServersComponent } from './Components/servers/servers.component';
 import { ServersWithParnentchildComponent } from './Components/ServerParentChild/servers-with-parnentchild/servers-with-parnentchild.component';
@@ -40,6 +41,8 @@ import { AccordionModule } from 'primeng/components/accordion/accordion';
 import{ CheckboxModule} from 'primeng/components/checkbox/checkbox' ;
 import{ RadioButtonModule} from 'primeng/components/radiobutton/radiobutton' ;
 import { from } from 'rxjs';
+import { PipesImplementsComponent } from './Components/PipesImplementation/pipes-implements/pipes-implements.component';
+import { INRCurrencyPipe } from './Pipes/inrcurrency-pipe.pipe';
 const appRoutes: Routes = [
   { path: '', component: EventPropertybindingComponent },
   { path: 'app-home', component: HomeComponent },
@@ -54,6 +57,7 @@ const appRoutes: Routes = [
   { path: 'AutoCompleteComponent', component: AutoCompleteComponent },
   { path: 'CompLifecycleComponent', component: CompLifecycleComponent },
   { path: 'DirectiveExampleComponent', component: DirectiveExampleComponent },
+  { path: 'PipesImplementsComponent', component: PipesImplementsComponent },
 ];
 
 @NgModule({
@@ -63,6 +67,7 @@ const appRoutes: Routes = [
     SortingSearchingComponent,
     ImagegalleryComponent, ImageDetailsComponent,
     FilterimagesPipe,
+    HyphenSlashPipe,
     EncryptionDescryptionSampleComponent,
     ServersComponent,
     ServersWithParnentchildComponent,
@@ -71,7 +76,9 @@ const appRoutes: Routes = [
     AutoCompleteComponent,
     CompLifecycleComponent,
     DirectiveExampleComponent,
-    BasicDirectiveDirective
+    BasicDirectiveDirective,
+    PipesImplementsComponent,
+    INRCurrencyPipe
   ],
   imports: [
     BrowserModule,

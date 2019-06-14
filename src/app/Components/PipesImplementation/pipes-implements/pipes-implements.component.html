@@ -1,0 +1,46 @@
+<div class="conatiner" style="padding-top:20px;">
+  <!-- <table class="table table-striped">
+    <thead>
+      <tr>
+        <th >Id</th>
+        <th >Name</th>
+        <th >Mobile No</th>
+        <th > Department</th>
+        <th >City</th>
+        <th >Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of sortedFood">
+        <td>{{emp.Id}}</td>
+        <td>{{emp.Name}}</td>
+        <td>{{emp.MobileNo}}</td>
+        <td>{{emp.Department}}</td>
+        <td>{{emp.City}}</td>
+        <td>{{emp.country}}</td>
+      </tr>
+      
+    </tbody>
+  </table> -->
+  <div class="clsdiv">
+    <p><span style="font-weight: bold;"> Async Pipe:</span>Remember how we had subscribed to an observable to get the
+      data from HTTP GET. An Async pipe can also be used for the same. An async pipe subscribes to an observable and
+      returns the latest value it has emitted.</p>
+  </div>
+  <div class="clsdiv">
+    <p><span style="font-weight: bold;"> Built-in Pipes:</span></p>
+    <b>Uppercase Pipe</b> : {{title | uppercase}}<br>
+    <b>Lowercase Pipe</b> : {{title | lowercase}}<br>
+    <b>Currency Pipe</b> : {{1234.56 | currency:"USD"}}<br>
+    <b>Json Pipe</b> : {{ jsonval | json }}<br>
+    <b>Percent Pipe</b> : {{00.54565 | percent}}<br>
+    <b>Slice Pipe</b> : {{days | slice:2:4}}<br>
+    <b>Date Pipe</b> : {{birthdate | date}}<br>
+    <b>Date Pipe</b> : {{birthdate | date:'fullDate'}}<br>
+  </div>
+  <div class="clsdiv">
+    <p><span style="font-weight: bold;"> Custom Pipes:</span> create a custom pipe that will take in an input value, and change the ‘-‘ in the input to ‘/’.</p>
+    <b>Convert - into / (11-99)</b>:{{"11-99"|hyphenToSlash }}<br/>
+    <b>Indian Rupee (INR ) Currency Filter Pipe(100000000)</b>:{{100000000|INRCurrency}}
+  </div>
+</div>

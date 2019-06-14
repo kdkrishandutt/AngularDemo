@@ -77,7 +77,7 @@ export class AutoCompleteComponent implements OnInit {
   maxDate: Date;
 
   es: any;
-  tr: Number;
+  tr: any;
   invalidDates: Array<Date>
 
   ngOnInit() {

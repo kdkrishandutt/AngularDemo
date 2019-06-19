@@ -1,5 +1,5 @@
 <div class="rowcol-12">
-  <p>Component Interaction:</p>
+  <p class="clsmainhedding">Component Interaction:</p>
   <p><b>1.Pass data from parent to child with input binding:</b> typically adorned with @Input decorations.</p>
   <p><b>2.Parent listens for child with @Output decoration:</b> The child component exposes an EventEmitter property
     with which it emits events when something happens. The parent binds to that event property and reacts to those
@@ -8,13 +8,15 @@
     properties or invoke child methods. You can do both by creating a template reference variable for the child element
     and then reference that variable within the parent template as seen in the above example.</p>
   <div class="clsexample">
-    <h3>Countdown to Liftoff (via local variable)</h3>
-    <button (click)="timer.start()" class="btn btn-primary">Start</button>&nbsp;
-    <button (click)="timer.stop()" class="btn btn-primary">Stop</button>
-    <div class="seconds">{{timer.seconds}}</div>
+    <div *ngIf="timer.seconds!=0">
+      <h3>Countdown to Liftoff (via local variable)</h3>
+      <button (click)="timer.start()" class="btn btn-primary">Start</button>&nbsp;
+      <button (click)="timer.stop()" class="btn btn-primary">Stop</button>
+      <div class="seconds">{{timer.seconds}}</div>
+    </div>
     <app-childvialocalvariable #timer></app-childvialocalvariable>
   </div>
-  
+
   <p><b>4.Parent calls an @ViewChild():</b>The local variable approach is simple and easy. But it is limited because the
     parent-child wiring must be done entirely within the parent template. The parent component itself has no access to
     the child. You can't use the local variable technique if an instance of the parent component class must read or
@@ -29,7 +31,7 @@
         <button class="btn btn-success mr-4" (click)="success()">Save Success</button>&nbsp;
         <button class="btn btn-warning" (click)="failed()">Save Failes</button>
       </div>
-      
+
     </div>
     <app-childviaviewchild></app-childviaviewchild>
   </div>

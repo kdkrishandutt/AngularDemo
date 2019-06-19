@@ -28,8 +28,8 @@ export class ChildvialocalvariableComponent implements OnInit, OnDestroy {
         this.message = 'Blast off!';
         this.clearTimer();
         setTimeout(() => {
-          this.seconds -= 1;
-        }, 7000);
+          this.countDown();
+        }, 6000);
       } else {
         if (this.seconds < 0) { this.seconds = 10; } // reset
         this.message = `T-${this.seconds} seconds and counting`;

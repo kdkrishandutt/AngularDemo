@@ -11,9 +11,9 @@ import { ServersComponent } from './Components/servers/servers.component';
 import { ServersWithParnentchildComponent } from './Components/ServerParentChild/servers-with-parnentchild/servers-with-parnentchild.component';
 import { AutoCompleteComponent } from './Components/auto-complete/auto-complete.component';
 import { CompLifecycleComponent } from './Components/comp-lifecycle/comp-lifecycle.component';
-
 import { PipesImplementsComponent } from './Components/PipesImplementation/pipes-implements/pipes-implements.component';
 import { GetChildValueComponent } from './Components/ChildComponentValue/get-child-value/get-child-value.component';
+import { ParentvialocalvariableComponent } from './Components/ParentinteractswithchildViaLocalVariable/parentvialocalvariable/parentvialocalvariable.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'app-home', component: HomeComponent },
@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'CompLifecycleComponent', component: CompLifecycleComponent },
   { path: 'PipesImplementsComponent', component: PipesImplementsComponent },
   { path: 'GetChildValueComponent', component: GetChildValueComponent },
+  { path: 'ParentvialocalvariableComponent', component: ParentvialocalvariableComponent },
   { path: 'DirectiveExampleComponent', loadChildren: './lazy/lazy.module#LazyModule' }
 ];
 

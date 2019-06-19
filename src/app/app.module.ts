@@ -43,6 +43,9 @@ import { INRCurrencyPipe } from './Pipes/inrcurrency-pipe.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { GetChildValueComponent } from './Components/ChildComponentValue/get-child-value/get-child-value.component';
 import { ChildcomponetComponent } from './Components/ChildComponentValue/childcomponet/childcomponet.component';
+import { ChildvialocalvariableComponent } from './Components/ParentinteractswithchildViaLocalVariable/childvialocalvariable/childvialocalvariable.component';
+import { ParentvialocalvariableComponent } from './Components/ParentinteractswithchildViaLocalVariable/parentvialocalvariable/parentvialocalvariable.component';
+import { ChildviaviewchildComponent } from './Components/ParentinteractswithchildViaLocalVariable/childviaviewchild/childviaviewchild.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import { ChildcomponetComponent } from './Components/ChildComponentValue/childco
     PipesImplementsComponent,
     INRCurrencyPipe,
     GetChildValueComponent,
-    ChildcomponetComponent
+    ChildcomponetComponent,
+    ChildvialocalvariableComponent,
+    ParentvialocalvariableComponent,
+    ChildviaviewchildComponent
   ],
   imports: [
     BrowserModule,

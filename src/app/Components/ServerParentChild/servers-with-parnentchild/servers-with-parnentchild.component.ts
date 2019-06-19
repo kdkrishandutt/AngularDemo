@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class ServersWithParnentchildComponent implements OnInit {
   serverElements = [{ type: 'server', name: 'testServer', content: 'testServerContent' }];
   constructor() { }
-  button_name:string="Show Disciption";
-  show_dialog:boolean=false;
+  button_name: string = "Show Disciption";
+  show_dialog: boolean = false;
   ngOnInit() {
   }
-  onServerAdded(serverData:{serverName:string,serverContent:string}) {
+  onServerAdded(serverData: { serverName: string, serverContent: string }) {
     this.serverElements.push({
       type: 'server',
       name: serverData.serverName,
@@ -20,7 +20,7 @@ export class ServersWithParnentchildComponent implements OnInit {
     });
   }
 
-  onAddBlueprint(blueprintData:{serverName:string,serverContent:string}) {
+  onAddBlueprint(blueprintData: { serverName: string, serverContent: string }) {
     this.serverElements.push({
       type: 'blueprint',
       name: blueprintData.serverName,
@@ -32,7 +32,7 @@ export class ServersWithParnentchildComponent implements OnInit {
     this.show_dialog = !this.show_dialog;
 
     // CHANGE THE TEXT OF THE BUTTON.
-    if(this.show_dialog) 
+    if (this.show_dialog)
       this.button_name = "Hide Discription!";
     else
       this.button_name = "Show Discription!";

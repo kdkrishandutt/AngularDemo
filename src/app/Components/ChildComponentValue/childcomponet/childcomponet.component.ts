@@ -9,6 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ChildcomponetComponent implements OnInit {
   @Input() Addition: number;
   @Output() valueUpdate = new EventEmitter();
+  num3: string;
   constructor() { }
   ngOnInit() {
   }

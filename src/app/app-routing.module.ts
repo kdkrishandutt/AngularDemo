@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EventPropertybindingComponent } from './Components/event-propertybinding/event-propertybinding.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -13,8 +13,9 @@ import { AutoCompleteComponent } from './Components/auto-complete/auto-complete.
 import { CompLifecycleComponent } from './Components/comp-lifecycle/comp-lifecycle.component';
 
 import { PipesImplementsComponent } from './Components/PipesImplementation/pipes-implements/pipes-implements.component';
+import { GetChildValueComponent } from './Components/ChildComponentValue/get-child-value/get-child-value.component';
 const routes: Routes = [
-  { path: '', component: EventPropertybindingComponent },
+  { path: '', component: HomeComponent },
   { path: 'app-home', component: HomeComponent },
   { path: 'app-event-propertybinding', component: EventPropertybindingComponent },
   { path: 'app-form-operation', component: FormOperationComponent },
@@ -27,7 +28,7 @@ const routes: Routes = [
   { path: 'AutoCompleteComponent', component: AutoCompleteComponent },
   { path: 'CompLifecycleComponent', component: CompLifecycleComponent },
   { path: 'PipesImplementsComponent', component: PipesImplementsComponent },
-  
+  { path: 'GetChildValueComponent', component: GetChildValueComponent },
   { path: 'DirectiveExampleComponent', loadChildren: './lazy/lazy.module#LazyModule' }
 ];
 

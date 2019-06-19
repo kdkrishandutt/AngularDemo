@@ -35,12 +35,14 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { CompLifecycleComponent } from './Components/comp-lifecycle/comp-lifecycle.component';
 import {OrderListModule} from 'primeng/orderlist';
 import { AccordionModule } from 'primeng/components/accordion/accordion';
-import{ CheckboxModule} from 'primeng/components/checkbox/checkbox' ;
-import{ RadioButtonModule} from 'primeng/components/radiobutton/radiobutton' ;
+import { CheckboxModule} from 'primeng/components/checkbox/checkbox' ;
+import { RadioButtonModule} from 'primeng/components/radiobutton/radiobutton' ;
 import { from } from 'rxjs';
 import { PipesImplementsComponent } from './Components/PipesImplementation/pipes-implements/pipes-implements.component';
 import { INRCurrencyPipe } from './Pipes/inrcurrency-pipe.pipe';
 import { AppRoutingModule } from './app-routing.module';
+import { GetChildValueComponent } from './Components/ChildComponentValue/get-child-value/get-child-value.component';
+import { ChildcomponetComponent } from './Components/ChildComponentValue/childcomponet/childcomponet.component';
 
 @NgModule({
   declarations: [
@@ -57,9 +59,10 @@ import { AppRoutingModule } from './app-routing.module';
     ServersDetailsComponent,
     AutoCompleteComponent,
     CompLifecycleComponent,
-    
     PipesImplementsComponent,
-    INRCurrencyPipe
+    INRCurrencyPipe,
+    GetChildValueComponent,
+    ChildcomponetComponent
   ],
   imports: [
     BrowserModule,

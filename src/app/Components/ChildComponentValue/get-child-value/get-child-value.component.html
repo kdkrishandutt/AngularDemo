@@ -1,0 +1,15 @@
+<p> Parent Component </p>
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Number1" (input)="getTotalAmt()" [(ngModel)]="num1" name="num1"
+    id="num1" />
+</div>
+<div class="form-group">
+  <input class="form-control" placeholder="Number2" type="text" (input)="getTotalAmt()" [(ngModel)]="num2" name="num2"
+    id="num2" />
+</div>
+--------------------------------------------------------------------------------------------<br>
+<span>Total of child and Parent value (parent*child):<span class="clsspan">{{Total}}</span></span><br>
+<span> Child Component Value: <span class="clsspan">{{childVal}}</span></span><br>
+----------------------------------------------------------------------------------------------
+<app-childcomponet [Addition]="Total" (valueUpdate)="getUpdatedvalue($event)"></app-childcomponet>
+<!-- In test-parent.component.html add this code -->

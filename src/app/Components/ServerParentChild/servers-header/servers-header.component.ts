@@ -1,12 +1,12 @@
-import { Component, OnInit,EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-servers-header',
   templateUrl: './servers-header.component.html',
   styleUrls: ['./servers-header.component.scss']
 })
 export class ServersHeaderComponent implements OnInit {
-  @Output() ServerCreated=new EventEmitter<{serverName:string,serverContent:string}>();
-  @Output() BluePrintCreated=new EventEmitter<{serverName:string,serverContent:string}>();
+  @Output() ServerCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
+  @Output() BluePrintCreated = new EventEmitter<{ serverName: string, serverContent: string }>();
   newServerName = '';
   newServerContent = '';
   constructor() { }
@@ -19,7 +19,7 @@ export class ServersHeaderComponent implements OnInit {
     //   name: this.newServerName,
     //   content: this.newServerContent
     // });
-    this.ServerCreated.emit({serverName:this.newServerName,serverContent:this.newServerContent})
+    this.ServerCreated.emit({ serverName: this.newServerName, serverContent: this.newServerContent })
   }
 
   onAddBlueprint() {
@@ -28,6 +28,6 @@ export class ServersHeaderComponent implements OnInit {
     //   name: this.newServerName,
     //   content: this.newServerContent
     // });
-    this.BluePrintCreated.emit({serverName:this.newServerName,serverContent:this.newServerContent})
+    this.BluePrintCreated.emit({ serverName: this.newServerName, serverContent: this.newServerContent })
   }
 }

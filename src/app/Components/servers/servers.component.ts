@@ -13,7 +13,6 @@ export class ServersComponent implements OnInit {
 
   ngOnInit() {
   }
- 
   onAddServer() {
     this.serverElements.push({
       type: 'server',

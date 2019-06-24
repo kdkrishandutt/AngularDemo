@@ -17,7 +17,7 @@
         <label for="txtPassword">Password</label>
         <input type="password" class="form-control" placeholder="Enter encryption password" [(ngModel)]="encPassword">
       </div>
-      <textarea class="form-control" readonly rows="3">{{conversionEncryptOutput}}</textarea>
+      <textarea class="form-control" readonly rows="3">{{conversionEncryptOutput}}({{conversionEncryptOutput1}})</textarea>
       <br>
       <button type="button" class="btn btn-success float-right" (click)="convertText('encrypt')">Encrypt</button>
     </div>
@@ -35,7 +35,7 @@
         <label for="txtPassword">Password</label>
         <input type="password" class="form-control" placeholder="Enter decryption password" [(ngModel)]="decPassword">
       </div>
-      <textarea class="form-control" readonly rows="3">{{conversionDecryptOutput}}</textarea>
+      <textarea class="form-control" readonly rows="3">{{conversionDecryptOutput}}({{conversionDecryptOutput1}})</textarea>
       <br>
       <button type="button" class="btn btn-success float-right" (click)="convertText('decrypt')">Decrypt</button>
     </div>

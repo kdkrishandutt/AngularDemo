@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -26,18 +25,17 @@ import { HyphenSlashPipe } from './Pipes/hypenToSlash.pipe';
 import { EncryptionDescryptionSampleComponent } from './Components/encryption-descryption-sample/encryption-descryption-sample.component';
 import { ServersComponent } from './Components/servers/servers.component';
 import { ServersWithParnentchildComponent } from './Components/ServerParentChild/servers-with-parnentchild/servers-with-parnentchild.component';
-import { HttpClient, HttpClientModule, HttpHandler } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ServersHeaderComponent } from './Components/ServerParentChild/servers-header/servers-header.component';
 import { ServersDetailsComponent } from './Components/ServerParentChild/servers-details/servers-details.component';
 import { AutoCompleteComponent } from './Components/auto-complete/auto-complete.component';
 import { CountryService } from './Services/country-service.service'
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { CompLifecycleComponent } from './Components/comp-lifecycle/comp-lifecycle.component';
-import {OrderListModule} from 'primeng/orderlist';
+import { OrderListModule } from 'primeng/orderlist';
 import { AccordionModule } from 'primeng/components/accordion/accordion';
-import { CheckboxModule} from 'primeng/components/checkbox/checkbox' ;
-import { RadioButtonModule} from 'primeng/components/radiobutton/radiobutton' ;
-import { from } from 'rxjs';
+import { CheckboxModule } from 'primeng/components/checkbox/checkbox';
+import { RadioButtonModule } from 'primeng/components/radiobutton/radiobutton';
 import { PipesImplementsComponent } from './Components/PipesImplementation/pipes-implements/pipes-implements.component';
 import { INRCurrencyPipe } from './Pipes/inrcurrency-pipe.pipe';
 import { AppRoutingModule } from './app-routing.module';
@@ -46,7 +44,12 @@ import { ChildcomponetComponent } from './Components/ChildComponentValue/childco
 import { ChildvialocalvariableComponent } from './Components/ParentinteractswithchildViaLocalVariable/childvialocalvariable/childvialocalvariable.component';
 import { ParentvialocalvariableComponent } from './Components/ParentinteractswithchildViaLocalVariable/parentvialocalvariable/parentvialocalvariable.component';
 import { ChildviaviewchildComponent } from './Components/ParentinteractswithchildViaLocalVariable/childviaviewchild/childviaviewchild.component';
-
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateTextComponent } from './Components/translate-text/translate-text.component';
+import { WebCamComponent } from './Components/WebCam/web-cam/web-cam.component';
+import { WebcamModule } from 'ngx-webcam';
+import { CameraComponent } from './Components/WebCam/camera/camera.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,18 +71,31 @@ import { ChildviaviewchildComponent } from './Components/Parentinteractswithchil
     ChildcomponetComponent,
     ChildvialocalvariableComponent,
     ParentvialocalvariableComponent,
-    ChildviaviewchildComponent
+    ChildviaviewchildComponent,
+    TranslateTextComponent,
+    WebCamComponent,
+    CameraComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,  ReactiveFormsModule,
+    AppRoutingModule, ReactiveFormsModule,
     NgxPaginationModule, Ng2SearchPipeModule, FormsModule, MatSortModule,
     BrowserAnimationsModule, MatPaginatorModule,
-    ToastrModule.forRoot(), AutoCompleteModule, HttpClientModule, AngularMultiSelectModule, 
-    CalendarModule,OrderListModule,AccordionModule,CheckboxModule,RadioButtonModule
-    ],
+    ToastrModule.forRoot(), AutoCompleteModule, HttpClientModule, AngularMultiSelectModule,
+    CalendarModule, OrderListModule, AccordionModule, CheckboxModule, RadioButtonModule, WebcamModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
+  ],
   providers: [ButtoneventService, SortingSearchingServiceService, ImageServiceService,
     FilterimagesPipe, CountryService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

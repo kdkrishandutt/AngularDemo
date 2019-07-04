@@ -1,0 +1,12 @@
+{
+    "visual": {
+        "title": "Visual Studio 2019 - Live Share individuell auswerten",
+        "text": "Um die Vorteile von Live Share nutzen zu können, benötigen Sie ein Team von Mitgliedern. Anschließend können Sie alle Funktionen mit Ihren Teammitgliedern erkunden. Der Anwendungsfall hier ist, dass Sie vor der Einführung in Ihr Team individuell lernen möchten, wie es funktioniert. Sie können dies tun, indem Sie 2 Instanzen von Visual Studio ausführen. Für diesen Artikel habe ich VS 2019 verwendet. Ich habe eine Konsolenanwendung zum Testen dieser Live Share-Funktion. Im folgenden Bild sehen Sie die Schaltfläche Live Share in der oberen rechten Ecke des Bildschirms.",
+        "button": "Mehr..."
+    },
+    "binding": {
+        "title": "Zweiwegedaten, die im Winkel binden",
+        "text": "Mit der bidirektionalen Bindung können wir eine Dateneigenschaft anzeigen und diese Eigenschaft aktualisieren, wenn der Benutzer Änderungen vornimmt. Wir können dies sowohl im Komponentenelement als auch im HTML-Element erreichen. Die bidirektionale Datenbindung verwendet die Syntax der Eigenschaftsbindung und der Ereignisbindung zusammen. Die Eigenschaftsbindung verwendet die Syntax als Klammer [] oder die Bindung und die Ereignisbindung verwendet die Syntax als Klammer () oder Ein, und diese Bindungen werden als Einwegbindungen betrachtet. Die bidirektionale Bindung funktioniert in beide Richtungen, indem der Wert festgelegt und der Wert abgerufen wird. Bei der bidirektionalen Bindung wird die Syntax als [()] oder das Schlüsselwort bindon verwendet. Es wird auch als Banana in the Box -Symbol bezeichnet. Es sieht aus wie eine Banane in einer Kiste.",
+        "button": "Mehr..."
+    }
+}

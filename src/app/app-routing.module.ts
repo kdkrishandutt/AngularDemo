@@ -14,6 +14,8 @@ import { CompLifecycleComponent } from './Components/comp-lifecycle/comp-lifecyc
 import { PipesImplementsComponent } from './Components/PipesImplementation/pipes-implements/pipes-implements.component';
 import { GetChildValueComponent } from './Components/ChildComponentValue/get-child-value/get-child-value.component';
 import { ParentvialocalvariableComponent } from './Components/ParentinteractswithchildViaLocalVariable/parentvialocalvariable/parentvialocalvariable.component';
+import { TranslateTextComponent } from './Components/translate-text/translate-text.component';
+import { WebCamComponent } from './Components/WebCam/web-cam/web-cam.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'app-home', component: HomeComponent },
@@ -30,7 +32,9 @@ const routes: Routes = [
   { path: 'PipesImplementsComponent', component: PipesImplementsComponent },
   { path: 'GetChildValueComponent', component: GetChildValueComponent },
   { path: 'ParentvialocalvariableComponent', component: ParentvialocalvariableComponent },
-  { path: 'DirectiveExampleComponent', loadChildren: './lazy/lazy.module#LazyModule' }
+  { path: 'DirectiveExampleComponent', loadChildren: './lazy/lazy.module#LazyModule' },
+  { path: 'app-translate-text', component: TranslateTextComponent },
+  { path: 'WebCamComponent', component: WebCamComponent }
 ];
 
 @NgModule({

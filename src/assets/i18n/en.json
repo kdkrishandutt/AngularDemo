@@ -1,0 +1,12 @@
+{
+    "visual": {
+        "title": "Visual Studio 2019 - Individually Evaluate Live Share",
+        "text": "To get the benefits of Live Share, you need a team of member/s and then you can explore all features with your team members. The use case here is that before introducing it to your team, you want to individually learn how it works. You can do this by running 2 instances of Visual Studio. I used VS 2019 for this article. I have a console application for testing this Live Share feature. In the below image, you can see the Live Share button on the top right corner of the screen.",
+        "button": "More.."
+    },
+    "binding": {
+        "title": "Two Way Data Binding In Angular",
+        "text": "Using two-way binding, we can display a data property as well as update that property when the user makes changes. We can achieve it in the component element and HTML element, both. Two-way data binding uses the syntaxes of property binding and event binding together. Property binding uses the syntax as bracket [] or bind and event binding uses the syntax as parenthesis () or on and these bindings are considered as one-way bindings. Two-way binding works in both directions setting the value and fetching the value. Two-way binding uses the syntax as [()] or the bindon keyword. It also called the banana in the box symbol. It looks like a banana in a box.",
+        "button": "More.."
+    }
+}

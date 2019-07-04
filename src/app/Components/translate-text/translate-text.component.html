@@ -1,0 +1,59 @@
+<div class="container">
+  <button (click)="toggle()" id="btToggle" class="btn btn-info btn-lg">{{button_name}}</button><br /><br />
+  <div class="row" *ngIf="show_dialog">
+    <div class="col-sm-6">
+      <ol>
+        <h3>Steps:</h3>
+      </ol>
+      <ol><b>1.add ngx-translate your Angular application:</b> <br /><br /> npm install @ngx-translate/core
+        @ngx-translate/http-loader rxjs --save</ol>
+      <ol><b>2.Now you have to init the translation TranslateModule in your app.module.ts:</b><br />import
+        (TranslateLoader,
+        TranslateModule) from '@ngx-translate/core';<br /><br />import (TranslateHttpLoader) from
+        '@ngx-translate/http-loader';<br /><br />import (HttpClient, HttpClientModule) from
+        '@angular/common/http';<br /><br /> {{ TranslateModule }}</ol>
+      <ol><b>3.Add below code in your Component:</b> <br />import (TranslateService) from
+        '@ngx-translate/core';<br /><br />constructor(private translate: TranslateService) [
+        translate.setDefaultLang('en');]<br /> The next step is to set the default language of your application using
+        translate.setDefaultLang('en'). In a real app you can of course load language from the user's settings.</ol>
+
+    </div>
+    <div class="col-sm-6">
+      <ol>4.Each language is stored in a separate .json file. Let's create the JSON file for the English translation:
+        assets/i18n/en.json.</ol>
+      <ol><b>5.You have two choices when it comes to adding translations:</b><br />translation pipe — (('id' |
+        translate))<br />
+        translation directive — &lt;element [translate]="'id'"&gt;&lt;/element&gt;<br />
+        Both options lead to the same result — it's just a matter of personal tast which one you want to use.</ol>
+      <ol>6.For more referance refer click here:<a target="_blank"
+          href="https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-angular8-app-with-ngx-translate">Link</a>
+      </ol>
+      <ol>7.Use this <b>Input decorator</b> in Parent Component to assign value to property. ex:
+        <span>[ServElement]="SERVERelement"</span></ol>
+    </div>
+  </div>
+  <div *ngIf="!show_dialog">
+    <div>
+      <button (click)="useLanguage('en')" class="btn btn-primary">English</button>
+      <button (click)="useLanguage('de')" class="btn btn-primary">German</button>
+      <button (click)="useLanguage('hi')" class="btn btn-primary">Hindi</button>
+    </div>
+    <div>
+      <!-- translation: translation pipe -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>{{ 'visual.title' | translate }}</h1>
+          <p>{{'visual.text'| translate }}</p>
+          <a translate>visual.button</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>{{ 'binding.title' | translate }}</h1>
+          <p>{{'binding.text'| translate }}</p>
+          <a translate>binding.button</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

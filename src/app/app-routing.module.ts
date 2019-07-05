@@ -16,6 +16,7 @@ import { GetChildValueComponent } from './Components/ChildComponentValue/get-chi
 import { ParentvialocalvariableComponent } from './Components/ParentinteractswithchildViaLocalVariable/parentvialocalvariable/parentvialocalvariable.component';
 import { TranslateTextComponent } from './Components/translate-text/translate-text.component';
 import { WebCamComponent } from './Components/WebCam/web-cam/web-cam.component';
+import { DragAndDropComponent } from './Components/drag-and-drop/drag-and-drop.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'app-home', component: HomeComponent },
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'ParentvialocalvariableComponent', component: ParentvialocalvariableComponent },
   { path: 'DirectiveExampleComponent', loadChildren: './lazy/lazy.module#LazyModule' },
   { path: 'app-translate-text', component: TranslateTextComponent },
-  { path: 'WebCamComponent', component: WebCamComponent }
+  { path: 'WebCamComponent', component: WebCamComponent },
+  { path: 'DragAndDropComponent', component: DragAndDropComponent }
 ];
 
 @NgModule({

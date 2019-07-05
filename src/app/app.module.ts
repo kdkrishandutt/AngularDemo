@@ -50,6 +50,9 @@ import { TranslateTextComponent } from './Components/translate-text/translate-te
 import { WebCamComponent } from './Components/WebCam/web-cam/web-cam.component';
 import { WebcamModule } from 'ngx-webcam';
 import { CameraComponent } from './Components/WebCam/camera/camera.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DragAndDropComponent } from './Components/drag-and-drop/drag-and-drop.component';
+import { MatCardModule } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +77,8 @@ import { CameraComponent } from './Components/WebCam/camera/camera.component';
     ChildviaviewchildComponent,
     TranslateTextComponent,
     WebCamComponent,
-    CameraComponent
+    CameraComponent,
+    DragAndDropComponent
   ],
   imports: [
     BrowserModule,
@@ -83,6 +87,7 @@ import { CameraComponent } from './Components/WebCam/camera/camera.component';
     BrowserAnimationsModule, MatPaginatorModule,
     ToastrModule.forRoot(), AutoCompleteModule, HttpClientModule, AngularMultiSelectModule,
     CalendarModule, OrderListModule, AccordionModule, CheckboxModule, RadioButtonModule, WebcamModule,
+    DragDropModule,MatCardModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

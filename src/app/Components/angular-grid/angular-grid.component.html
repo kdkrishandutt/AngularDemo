@@ -1,0 +1,15 @@
+<button (click)="getSelectedRows()">Get Selected Rows</button>
+<ag-grid-angular  
+    #agGrid   
+    style="width: 605px; height: 500px;"     
+    class="ag-theme-balham"    
+    [rowData]="gridData"     
+    [columnDefs]="gridcolumns" 
+    rowSelection="multiple" 
+  
+    >    
+</ag-grid-angular> 
+
+<!-- Use For Row Click event (cellClicked)="onCellClicked($event)"
+(cellDoubleClicked)="onCellDoubleClicked($event)"   -->
+

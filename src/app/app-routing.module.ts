@@ -17,6 +17,8 @@ import { ParentvialocalvariableComponent } from './Components/Parentinteractswit
 import { TranslateTextComponent } from './Components/translate-text/translate-text.component';
 import { WebCamComponent } from './Components/WebCam/web-cam/web-cam.component';
 import { DragAndDropComponent } from './Components/drag-and-drop/drag-and-drop.component';
+import { DynamicControlsComponent } from './Components/dynamic-controls/dynamic-controls.component';
+import { AngularGridComponent } from './Components/angular-grid/angular-grid.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'app-home', component: HomeComponent },
@@ -36,7 +38,9 @@ const routes: Routes = [
   { path: 'DirectiveExampleComponent', loadChildren: './lazy/lazy.module#LazyModule' },
   { path: 'app-translate-text', component: TranslateTextComponent },
   { path: 'WebCamComponent', component: WebCamComponent },
-  { path: 'DragAndDropComponent', component: DragAndDropComponent }
+  { path: 'DragAndDropComponent', component: DragAndDropComponent },
+  { path: 'DynamicControlsComponent', component: DynamicControlsComponent },
+  { path: 'AngularGridComponent', component: AngularGridComponent }
 ];
 
 @NgModule({

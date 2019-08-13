@@ -53,6 +53,9 @@ import { CameraComponent } from './Components/WebCam/camera/camera.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DragAndDropComponent } from './Components/drag-and-drop/drag-and-drop.component';
 import { MatCardModule } from '@angular/material';
+import { DynamicControlsComponent } from './Components/dynamic-controls/dynamic-controls.component';
+import { AngularGridComponent } from './Components/angular-grid/angular-grid.component';
+import { AgGridModule } from 'ag-grid-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +81,9 @@ import { MatCardModule } from '@angular/material';
     TranslateTextComponent,
     WebCamComponent,
     CameraComponent,
-    DragAndDropComponent
+    DragAndDropComponent,
+    DynamicControlsComponent,
+    AngularGridComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +92,7 @@ import { MatCardModule } from '@angular/material';
     BrowserAnimationsModule, MatPaginatorModule,
     ToastrModule.forRoot(), AutoCompleteModule, HttpClientModule, AngularMultiSelectModule,
     CalendarModule, OrderListModule, AccordionModule, CheckboxModule, RadioButtonModule, WebcamModule,
-    DragDropModule,MatCardModule,
+    DragDropModule, MatCardModule, AgGridModule.withComponents([]),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
